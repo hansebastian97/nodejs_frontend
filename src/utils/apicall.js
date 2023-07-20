@@ -1,7 +1,10 @@
 import api from 'axios';
+import dotenv from 'dotenv';
 
- 
-api.defaults.baseURL = "http://localhost:8000/";
+dotenv.config();
+
+
+api.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 
 const setHeader = () => {
     const token = localStorage.getItem('token');
